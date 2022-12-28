@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  mavlink-router:
+    image: mavlink-router-docker:latest
+    networks: 
+      - my_host
+
+    volumes:
+      - "/dev/:/dev/"
+    environment:
+      LISTEN: "localhost:14550"
+    ports:
+      - "14550/udp"
+      - "14551/udp"
+      - "14552/udp"
+      - "14553/udp"
+      - "14554/udp"
+      - "14555/udp"
+
+networks: 
+    my_host: 
+      driver: bridge
