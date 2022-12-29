@@ -13,7 +13,7 @@ RUN git clone --recursive https://github.com/intel/mavlink-router
 WORKDIR mavlink-router
 
 RUN meson setup build .
-RUN ninja -C build
+RUN ninja -C build install
 
 
 RUN mkdir /etc/mavlink-router

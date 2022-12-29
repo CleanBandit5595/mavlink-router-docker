@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  sitl:
+    image: radarku/ardupilot-sitl:latest
+    #networks: 
+    #      - my_host
+
+    volumes:
+      - "/dev/:/dev/"
+    ports:
+      - "5760:5760"
+      - "5761:5761"
+      - "5762:5762"
+      - "5763:5763"
+
+networks: 
+    my_host: 
+      driver: bridge
